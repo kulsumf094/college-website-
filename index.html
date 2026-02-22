@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>St. Ann's College for Women</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #1abc9c;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background-color: #16a085;
+        }
+        section {
+            padding: 40px;
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(10px);} 
+            to {opacity: 1; transform: translateY(0);} 
+        }
+        section.active {
+            display: block;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        form button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="St. Ann's College Logo" style="width:80px; display:block; margin:0 auto 10px;">
+    <h1>St. Ann's College for Women</h1>
+    <p style="margin:5px 0;">Autonomous | Hyderabad</p>
+    <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('courses')">Courses</button>
+        <button onclick="showSection('department')">Departments</button>
+        <button onclick="showSection('feedback')">Feedback</button>
+        <button onclick="showSection('about')">About Us</button>
+    </nav>
+</header>
+
+<section id="home" class="active">
+    <h2>Welcome</h2>
+    
+    <div class="card">
+        <h3>Student Details</h3>
+        <p><strong>Name:</strong> ____________________</p>
+        <p><strong>Roll No:</strong> ____________________</p>
+        <p><strong>Department:</strong> ____________________</p>
+    </div>
+</section>
+
+<section id="courses">
+    <h2>Courses Offered</h2>
+    <div class="card">MPCs (Mathematics, Physics, Computer Science)</div>
+    <div class="card">MECs (Mathematics, Electronics, Computer Science)</div>
+    <div class="card">MAICs (Mathematics, Artificial Intelligence, Computer Science)</div>
+    <div class="card">MSCS (Mathematics, Statistics, Computer Science)</div>
+    <div class="card">MSDS (Mathematics, Data Science, Computer Science)</div>
+</section>
+
+<section id="department">
+    <h2>Departments</h2>
+    <div class="card">Department of Computer Science</div>
+    <div class="card">Department of Mathematics</div>
+    <div class="card">Department of Physics</div>
+    <div class="card">Department of Statistics</div>
+</section>
+
+<section id="feedback">
+    <h2>Feedback Form</h2>
+    <div class="card">
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <div class="card">
+        <p>St. Ann's College for Women<br>Hyderabad, Telangana</p>
+        <iframe src="https://www.google.com/maps?q=Hyderabad&output=embed" width="100%" height="300" style="border:0;"></iframe>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 College Project</p>
+</footer>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
